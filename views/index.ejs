@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Social Media <%= title %></title>
+        <link rel="stylesheet" href="style.css" type="text/css">
+        <script src="https://kit.fontawesome.com/4a009679e3.js" crossorigin="anonymous"></script>
+      </head>
+<body>
+        <nav>
+            <div class="nav-left">
+                <img src="images/logo2.png" class="logo" >
+                <ul>
+                    <li><img src="images/notification.png" ></li>
+                    <li><img src="images/inbox.png" ></li>
+                    <li><img src="images/video.png " ></li>
+                </ul>
+            </div>
+            <div class="nav-right">
+    
+                <div class="search-box">
+                    <img src="images/search.png" >
+                    <input type="text" placeholder="Search">
+                </div>
+                <div class="nav-user-icon online" >
+                    <!-- Button to trigger the sign-up pop-up -->
+                    <button id="logout"><img src="images/profile-pic.png" alt="logout"></button>
+                    
+                </div>
+            </div>
+            <!--logout overlay-->
+            <div class="overlay" id="logout-overlay">
+                <!--logout pop-up container-->
+                    <form class="form" id="logout-form" action="/login">
+                        <button type="submit">Logout</button>
+                    </form>
+                </div>
+           </div>
+        </nav>        
+    </div>
+
+
+        <!--main section-->
+
+
+        <div class="container">
+            <!---left-sidebar----------- -->\
+
+
+        <div class="left-sidebar">
+            <div class="imp-links">
+                 <a href="#"><img src="images/videos.png"> Latest Videos</a>
+                 <a href="#"><img src="images/friends.png"> Friends</a>
+                 <a href="#"><img src="images/group.png"> Group</a>
+                 <a href="#"><img src="images/marketplace.png"> Marketplace</a>
+                 <a href="#"><img src="images/watch.png"> Watch</a>
+                 <a href="#">See more</a>
+                 <div class="shortcut-links">
+                    <p>Your Shortcuts</p>
+                    <a href=""><img src="images/shortcut-1.png"> Web Developers</a>
+                    <a href=""><img src="images/shortcut-2.png"> Web Design course</a>
+                    <a href=""><img src="images/shortcut-3.png"> Full Stack Developments</a>
+                    <a href=""><img src="images/shortcut-4.png"> Website Experts</a>
+                 </div>
+            </div>
+        </div>
+
+
+
+         <!------main-content-------- -->
+
+        
+         <div class="main-content">
+
+            <div class="story-gallery">
+                <div class="story story1">
+                    <img src="images/upload.png" >
+                    <p>Post story</p>
+                </div>
+                <div class="story story2">
+                    <img src="images/member-1.png" >
+                    <p>Alison</p>
+                </div> 
+                <div class="story story3">
+                    <img src="images/member-2.png" >
+                    <p>Jackson</p>
+                </div> 
+                <div class="story story4">
+                    <img src="images/member-3.png" >
+                    <p>Baki</p>
+                </div>
+                 <div class="story story5">
+                    <img src="images/member-4.png" >
+                    <p>Oliver</p>
+                </div>
+            </div>
+
+                <div class="write-post-container">
+                    <div class="user-profile">
+                        <img src="images/profile-pic.png">
+                        <div>
+                            <p>John Nichonlson</p>
+                            <small>Public <i class="fa-solid fa-chevron-down"></i></small>
+                        </div>
+                    </div>
+
+                    <div class="post-input-container">
+                        <textarea rows="3" placeholder="Your Thoughts"></textarea>
+                    <div class="add-post-links">
+                        <a href="#"><img src="images/live-video.png">Live Video</a>
+                        <a href="#"><img src="images/photo.png"></a>
+                        <a href="#"><img src="images/feeling.png">Feeling/Activity</a>
+                    </div>
+                    </div>
+                </div>
+
+
+                <div class="post-container">
+                    <div class="post-row">
+                        <div class="user-profile">
+                            <img src="images/profile-pic.png">
+                            <div>
+                                <p>John Nichonlson</p>
+                              <span>Sept 21 2023, 22:32 pm</span>                 
+                            </div>
+                        </div>
+                        <a href="#"> <i class="fa-solid fa-ellipsis-v"></i></a>
+                    </div>
+                   
+                    <p class="post-text">For more information <span>click on</span> <a href="#">Here</a> </p>
+                    <img src="images/feed-image-1.png" class="post-img">
+
+
+                    <div class="post-row">
+                        <div class="activity-icons">
+                            <div><img src="images/like-blue.png"> 120</div>
+                            <div><i mg src="images/comments.png"> 45</div>
+                            <div><img src="images/share.png"> 20</div>
+                        </div>
+                        <div class="post-profile-icon">
+                        <img src="images/profile-pic.png"><i class="fa-solid fa-chevron-down"></i>
+                        
+                        </div>
+                    </div>
+                    
+                </div>
+                
+
+        </div>
+  
+<script src="script.js"></script>
+</body>
+
+</html>

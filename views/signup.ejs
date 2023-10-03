@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Media <%= title %></title>
+    <style>
+      body{
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif;
+        background-color: #f2f2f2;
+      }
+        /* Style for the overlay background */
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+
+        /* Style for the login/sign-up container */
+        .popup-container {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #fff;
+            padding: 20px 30px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Style for the close button */
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+        }
+
+        /* Style for the form */
+        .form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form label,
+        .form input {
+            margin-bottom: 12px;
+        }
+        .form input{
+          padding:10px 20px;
+          border: 1px solid #ccc;
+          border-radius: 5px;
+        }
+        /* Style for the submit button */
+        .submit-btn {
+            background-color: #008CBA;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .submit-btn:hover{
+          background-color: #006080;
+        }
+        /* Style for the sign-up link */
+        #show-login{
+            color: #008CBA;
+            text-decoration: none;
+        }
+        #show-login:hover{
+          text-decoration: underline;
+          color:purple;
+        }
+    </style>
+</head>
+<body>
+    <!-- Login/Sign-up Overlay -->
+    <div class="overlay" id="overlay">
+        <!-- Login/Sign-up Container -->
+        <div class="popup-container" id="popup-container">
+            <span class="close-btn" id="close-btn">&times;</span>
+            <h2>Sign Up</h2>
+            <form class="form" id="signup-form" action="/login" method ="post">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name = "name" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name = "email" required>
+                <label for="password">Password:</label>
+                <input type="password" name="password" id="password" required>
+                <label for="password">Confirm Password:</label>
+                <input type="password" id="confirm-password" required>
+                <button type="submit" class="submit-btn">Signup</button>
+            </form>
+            <p>Already have an account? <a href="login" id="show-login">Login</a></p>
+        </div>
+    </div>
+<script>
+
+    const password = document.getElementById("password");
+
+    const passwordRegex = /^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
+    password.addEventListener("input", () => {
+        if (!passwordRegex.test(password.value)) {
+            password.setCustomValidity(
+                "Password must be greater than 8 characters which contains atleast one uppercase, one lowercase, one number and one special character"
+            );
+        } else {
+            password.setCustomValidity("");
+        }
+    });
+
+    const confirmPassword = document.getElementById("confirm-password");
+    const signupForm = document.getElementById("signup-form");
+
+    signupForm.addEventListener("submit", (e) => {
+        if (password.value !== confirmPassword.value) {
+            e.preventDefault();
+            alert("Passwords don't match");
+        }
+    });
+    
+</script>
+</body>
+</html>
