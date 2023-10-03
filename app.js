@@ -8,7 +8,7 @@ app.set('view engine', 'ejs')
 
 app.use(express.static('public'))
 // mongoose connection
-const dbURL = "mongodb+srv://test:test1234@nodetuts.oz4uz2s.mongodb.net/?retryWrites=true&w=majority"
+const dbURL = "" // paste your mongodb link
 mongoose.connect(dbURL)
 .then(()=>{
     console.log('connected to database')
